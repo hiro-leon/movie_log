@@ -1,0 +1,48 @@
+{% extends "base.html" %}
+{% block content %}
+<div class container>
+    <form class="form-group" method="POST">
+        {{form.hidden_tag() }}
+        <br>
+        <div class="form-group">
+            {{form.title.label(class="form-control-label")}}
+            {{form.title(class="form-control form-control-lg")}}
+        </div>
+        <div class="form-group">
+            {{form.director.label(class="form-control-label")}}
+            {{form.director(class="form-control form-control-lg")}}
+        </div>
+        <div class="form-group">
+            {{form.star.label(class="form-control-label")}}
+            {{form.star(class="form-control form-control-lg")}}
+        </div>
+        <div class="form-group">
+            {{form.genre.label(class="form-control-label")}}
+            {{form.genre(class="form-control form-control-lg")}}
+        </div>
+        <div class="form-group">
+            {{form.date.label(class="form-control-label")}}
+            {{form.date(class="form-control form-control-lg")}}
+        </div>
+        <div class="form-group">
+            {{ form.recommended.label(class="form-control-label") }}
+            {{ form.recommended(class="form-control form-control-lg") }}
+        </div>
+        <div class="form-group">
+            {{ form.comment.label(class="form-control-label") }}
+            {{ form.comment(class="form-control form-control-lg") }}
+        </div>
+        {% if errors %}
+            <div class="alert alert-primary" role="alert">
+              {{ errors }}
+            </div>
+        {% endif %}
+        <div class="form-group">
+            {{form.submit(class="btn btn-primary")}}
+        </div>
+    </form>
+</div>
+{% endblock %}
+
+
+
